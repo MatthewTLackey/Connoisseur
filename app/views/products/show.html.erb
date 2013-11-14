@@ -1,0 +1,11 @@
+<h1>A product</h1>
+
+<img src=<%= @product[0]['image_url'] %>>
+
+
+
+<p><%= @product[0]['name'] %></p>
+
+<p><%= @product[0]['tertiary_category'] %></p>
+
+<p><%= number_to_currency(@product[0]['price_in_cents'].to_f/100) %></p>
