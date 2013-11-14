@@ -28,11 +28,14 @@ class ProductsController < ApplicationController
     products_json = open('http://lcboapi.com/products').read
     @product = JSON.parse(products_json)['result']
 
+
   end
 
   def destroy
 
   end
+
+  
 
 
 end
