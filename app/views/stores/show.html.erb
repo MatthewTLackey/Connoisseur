@@ -4,16 +4,16 @@
   <% if x['id'].to_s == params[:id] %>
   <h1><%= x['name']%></h1>
   
-<p><%= x['address_line_1'] %><br><%= x['address_line_2'] %><br><%= x['city']%>, <%= x['postal_code']%><br><%= x['telephone']%></p>
+  <p><%= x['address_line_1'] %><br><%= x['address_line_2'] %><br><%= x['city']%>, <%= x['postal_code']%><br><%= x['telephone']%></p>
 
   <p>Hours:</p>
-  <p>Sunday: <%= x['sunday_open'].to_i / 60%> am - <%= x['sunday_close'].to_i / 60 - 12%> pm<br>
-  Monday: <%= x['monday_open'].to_i / 60%> pm - <%= x['monday_close'].to_i / 60 - 12%> pm<br>
-  Tuesday: <%= x['tuesday_open'].to_i / 60%> am - <%= x['tuesday_close'].to_i / 60 - 12%> pm<br>
-  Wednesday: <%= x['wednesday_open'].to_i / 60%> am - <%= x['wednesday_close'].to_i / 60 - 12%> pm<br>
-  Thursday: <%= x['thursday_open'].to_i / 60%> am - <%= x['thursday_close'].to_i / 60 - 12%> pm<br>
-  Friday: <%= x['friday_open'].to_i / 60%> am - <%= x['friday_close'].to_i / 60 - 12%> pm<br>
-  Saturday: <%= x['saturday_open'].to_i / 60%> am - <%= x['saturday_close'].to_i / 60 - 12%> pm</p>
+  <p>Sunday: <%= format_time(x['sunday_open'].to_i)%> - <%= format_time(x['sunday_close'].to_i) %><br>
+  Monday: <%= format_time(x['monday_open'])%> - <%= format_time(x['monday_close'].to_i) %><br>
+  Tuesday: <%= format_time(x['tuesday_open'].to_i) %> - <%= format_time(x['tuesday_close'].to_i)%><br>
+  Wednesday: <%= format_time(x['wednesday_open'].to_i)%> - <%= format_time(x['wednesday_close'].to_i)%><br>
+  Thursday: <%= format_time(x['thursday_open'].to_i) %> - <%= format_time(x['thursday_close'].to_i)%><br>
+  Friday: <%= format_time(x['friday_open'].to_i) %> - <%= format_time(x['friday_close'].to_i)%> <br>
+  Saturday: <%= format_time(x['saturday_open'].to_i)%> - <%= format_time(x['saturday_close'].to_i) %></p>
     
   <% end %>
 
